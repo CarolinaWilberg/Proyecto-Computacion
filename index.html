@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    </head>
+    <body>
+    
+        <!--BLOQUE VENTAS POR SUCURSAL-->
+
+        <div class="ventas-sucursal bloque">
+            <div class="encabezado">
+                <h1>Ventas por sucursal</h1>
+            </div>
+            <table class="tabla vps">
+                <thead>
+                    <tr>
+                        <th>Sucursal</th>
+                        <th>Total ventas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Centro</td>
+                        <td id="ventas-centro"></td>
+                    </tr>
+                    <tr>
+                        <td>Caballito</td>
+                        <td id="ventas-caballito"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--BLOQUE REPORTES-->
+
+        <div class="reportes bloque">
+            <div class="encabezado">
+                <h1>Reportes</h1>
+            </div>
+            <p>Producto estrella:</p> <span id="producto-estrella"></span>
+            <p>Vendedora que más ingresos generó:</p> <span id="mejor-vendedora"></span>
+        </div>
+
+        <!--BLOQUE VENTAS-->
+
+        <div class="ventas bloque">
+            <div class="encabezado">
+                <h1>Ventas</h1>
+                <button id="btn-nueva-venta"><i class="fas fa-plus-circle"></i>Nueva venta</button>
+            </div>
+            <table class="tabla vt">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Vendedora</th>
+                        <th>Sucursal</th>
+                        <th>Componentes</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!--
+            ************MODALES**************
+        -->
+
+        <!--MODAL AGREGAR NUEVA VENTA-->
+
+        <div id="modal-agregar" class="modal-container">
+            <div class="modal">
+                <div class="encabezado">
+                    <h1>Agregar Venta</h1>
+                </div>
+                <form>
+                    <label>Vendedora</label>
+                    <select id="select-vendedora">
+                        <!--<option></option>-->
+                    </select>
+                    <label>Componentes</label>
+                    <select multiple class="opcion-multiple">
+                        <option></option>
+                    </select>
+                    <label>Sucursal</label>
+                    <select>
+                        <option></option>
+                    </select>
+                    <label>Fecha</label>
+                    <input type="datetime">
+                    <div class="footer">
+                        <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
+                        <input id="btn-guardar-nueva" class="guardar" type="submit" value="Guardar">
+                    </div>                    
+                </form>
+            </div>
+        </div>
+
+        <!--MODAL EDITAR VENTA-->
+        
+        <div id="modal-editar" class="modal-container">
+            <div class="modal">
+                <div class="encabezado">
+                    <h1>Editar Venta</h1>
+                </div>
+                <form>
+                    <label>Vendedora</label>
+                    <select>
+                        <option></option>
+                    </select>
+                    <label>Componentes</label>
+                    <select multiple class="opcion-multiple">
+                        <option></option>
+                    </select>
+                    <label>Sucursal</label>
+                    <select>
+                        <option></option>
+                    </select>
+                    <label>Fecha</label>
+                    <input type="datetime">
+                    <div class="footer">
+                        <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
+                        <input id="btn-guardar-cambio" class="guardar" type="submit" value="Guardar">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--MODAL ELIMINAR VENTA-->
+        
+        <div id="modal-eliminar" class="modal-container">
+            <div class="modal">
+                <div class="encabezado">
+                    <h1>Eliminar Venta</h1>
+                </div>
+                <h2>¿Estás segura?</h2>
+                <p>Esta acción no se puede revertir.</p>
+                <div class="footer">
+                    <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
+                    <input id="btn-eliminar" class="eliminar" type="submit" value="Eliminar">
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
