@@ -7,6 +7,7 @@ const ventasCaballito = document.querySelector('#ventas-caballito')
 const productoEstrella = document.querySelector('#producto-estrella')
 const mejorVendedora = document.querySelector('#mejor-vendedora')
 //BLOQUE VENTAS
+const tablaVentas = document.querySelector('#tbody-ventas')
 const btnNuevaVenta = document.querySelector("#btn-nueva-venta")
 //MODALES
 const modalAgregar = document.querySelector("#modal-agregar")
@@ -14,6 +15,8 @@ const modalEditar = document.querySelector("#modal-editar")
 const modalEliminar = document.querySelector("#modal-eliminar")
 //FORMULARIO MODALES
 const selectVendedora = document.querySelector("#select-vendedora")
+const selectComponente = document.querySelector('#select-componente')
+const selectSucursal = document.querySelector('#select-sucursal')
 //BOTONES MODALES
 const btnCancelar = document.querySelector("#btn-cancelar")
 const btnGuardarNueva = document.querySelector("#btn-guardar-nueva")
@@ -44,25 +47,83 @@ const precios = [
    ["RAM Quinston Fury", 230 ],
 ]
 
+const sucursales = ["Centro", "Caballito"];
 
-//----------------------FUNCIONALIDAD BOTONES---------------------
+
+//----------AGREGO DATOS PRECARGADOS A LA TABLA DE VENTAS---------
+
+const precioMaquina = (array) => {
+  let suma = 0
+  for (let precio of precios) {
+    array.forEach(element => {
+      precio.includes(element) ? suma += precio[1] : false
+    })
+  }
+  return suma;
+}
+
+const precargadosTablaVentas = () => {
+  for (let i=0 ; i<ventas.length ; i++){
+    const filaVenta = document.createElement('tr')
+    for (j=1 ; j<ventas[i].length ; j++){
+      filaVenta.innerHTML = `<td>${ventas[i][1].toLocaleDateString()}</td> <td>${ventas[i][2]}</td> <td>${ventas[i][3]}</td><td>${ventas[i][4]}</td> <td>${precioMaquina(ventas[i][4])}</td> <td><i class="fas fa-edit icono i-editar"></i><i class="fas fa-trash-alt icono i-eliminar"></i></td>` 
+    }
+    tablaVentas.appendChild(filaVenta)
+  }
+  return ventas;
+}
+precargadosTablaVentas()
+
+/*************************************************************
+MODAL AGREGAR NUEVA VENTA
+**************************************************************/ 
+
+//-----RELLENANDO LAS OPCIONES DEL FORMULARIO CON DATOS PRECARGADOS------
+
+//Vendedoras
+let cargarVendedora = () =>{
+  for (let i=0; i<vendedoras.length; i++){
+    const valorVendedora = document.createElement('option')
+    valorVendedora.innerHTML = vendedoras[i]
+    selectVendedora.appendChild(valorVendedora)
+  }
+  return vendedoras;
+}
+cargarVendedora()
+
+//Componentes
+let cargarComponente = () => {
+  for (let i=0; i<precios.length;i++){
+    for (let j=0; j<precios[i][0][j].length;j++){
+      const valorComponente = document.createElement('option')
+      valorComponente.innerHTML = precios[i][0]
+      selectComponente.appendChild(valorComponente)
+    }
+  }
+  return precios;
+}
+cargarComponente()
+
+//Sucursales
+let cargarSucursal = () =>{
+  for (let i=0; i<sucursales.length; i++){
+    const valorSucursal = document.createElement('option')
+    valorSucursal.innerHTML = sucursales[i]
+    selectSucursal.appendChild(valorSucursal)
+  }
+  return sucursales;
+}
+cargarSucursal()
+
+//-------------------FUNCIONALIDAD BOTONES----------------------
 btnNuevaVenta.addEventListener('click', () => {
   modalAgregar.style.display = 'block';
 })
 
-btnCancelar.addEventListener('click', () =>{
+btnCancelar.addEventListener('click', () => {
   modalAgregar.style.display = 'none';
 })
 
 
-//-------------RELLENANDO FORMULARIOS DE LAS MODALES---------------
-let cargarVendedora = () =>{
-  for (let i=0; i<vendedoras.length; i++){
-  const valorVendedora = document.createElement('option')
-  valorVendedora.innerHTML = vendedoras[i]
-  selectVendedora.appendChild('valorVendedora')
-}
-return vendedoras;
-}
 
-cargarVendedora()
+
