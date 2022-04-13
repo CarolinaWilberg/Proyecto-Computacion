@@ -86,11 +86,12 @@
                     <label>Componentes</label>
                     <select multiple class="opcion-multiple" id="select-componente">
                     </select>
+                    <p>Mantenga presionada la tecla Ctrl para seleccionar varios componentes</p>
                     <label>Sucursal</label>
                     <select id="select-sucursal">
                     </select>
                     <label>Fecha</label>
-                    <input type="datetime">
+                    <input type="date" id="select-fecha">
                     <div class="footer">
                         <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
                         <input id="btn-guardar-nueva" class="guardar" type="submit" value="Guardar">
@@ -117,7 +118,7 @@
                     <select>
                     </select>
                     <label>Fecha</label>
-                    <input type="datetime">
+                    <input type="date">
                     <div class="footer">
                         <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
                         <input id="btn-guardar-cambio" class="guardar" type="submit" value="Guardar">
@@ -142,7 +143,8 @@
             </div>
         </div>
 
+        <script src="js/ventas.js"></script>
         <script src="js/script.js"></script>
-
+        
     </body>
 </html>

@@ -27,10 +27,19 @@ body{
 }
 
 .reportes p{
+    display: inline-block;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: #0b525b;
-    margin: 20px 20px 20px 30px;
+    margin: 0px 20px 20px 30px;
+}
+
+.reportes span{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0b525b;
+    margin: 0px 20px 20px 10px;
 }
 
 .ventas{
@@ -141,11 +150,11 @@ body{
     cursor: pointer;
 }
 
-.i-editar{
+.btn-editar{
     color: #6bb359;
 }
 
-.i-eliminar{
+.btn-eliminar{
     color: rgb(235, 10, 10);
 }
 
@@ -177,7 +186,7 @@ MODALES
     width: 100%;
 }
 
-.modal form>label, .modal>h2{
+.modal form>label {
     margin: 0px 20px 10px 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -185,13 +194,21 @@ MODALES
     font-weight: bold;
 }
 
+.modal>h2{
+    margin: 25px 20px 35px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #0b525b;
+    font-weight: bold;
+}
+
 .modal p{
-    margin: 20px 20px 10px 20px;
+    margin: -15px 20px 20px 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
 
-.modal form>select, .modal form>input[type="datetime"]{
+.modal form>select, .modal form>input[type="date"]{
     margin: 0px 20px 20px 20px;
     height: 30px;
 }
