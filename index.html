@@ -9,40 +9,44 @@
     </head>
     <body>
     
-        <!--BLOQUE VENTAS POR SUCURSAL-->
+        <div class="container">
 
-        <div class="ventas-sucursal bloque">
-            <div class="encabezado">
-                <h1>Ventas por sucursal</h1>
+            <!--BLOQUE VENTAS POR SUCURSAL-->
+
+            <div class="ventas-sucursal bloque">
+                <div class="encabezado">
+                    <h1>Ventas por sucursal</h1>
+                </div>
+                <table class="tabla vps">
+                    <thead>
+                        <tr>
+                            <th>Sucursal</th>
+                            <th>Total ventas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Centro</td>
+                            <td id="ventas-centro"></td>
+                        </tr>
+                        <tr>
+                            <td>Caballito</td>
+                            <td id="ventas-caballito"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <table class="tabla vps">
-                <thead>
-                    <tr>
-                        <th>Sucursal</th>
-                        <th>Total ventas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Centro</td>
-                        <td id="ventas-centro"></td>
-                    </tr>
-                    <tr>
-                        <td>Caballito</td>
-                        <td id="ventas-caballito"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <!--BLOQUE REPORTES-->
+            <!--BLOQUE REPORTES-->
 
-        <div class="reportes bloque">
-            <div class="encabezado">
-                <h1>Reportes</h1>
+            <div class="reportes bloque">
+                <div class="encabezado">
+                    <h1>Reportes</h1>
+                </div>
+                <p>Producto estrella:</p> <span id="producto-estrella"></span>
+                <p>Vendedora que más ingresos generó:</p> <span id="mejor-vendedora"></span>
             </div>
-            <p>Producto estrella:</p> <span id="producto-estrella"></span>
-            <p>Vendedora que más ingresos generó:</p> <span id="mejor-vendedora"></span>
+
         </div>
 
         <!--BLOQUE VENTAS-->
@@ -52,20 +56,22 @@
                 <h1>Ventas</h1>
                 <button id="btn-nueva-venta"><i class="fas fa-plus-circle"></i>Nueva venta</button>
             </div>
-            <table class="tabla vt">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Vendedora</th>
-                        <th>Sucursal</th>
-                        <th>Componentes</th>
-                        <th>Precio</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody-ventas">
-                </tbody>
-            </table>
+            <div class="scroll">
+                <table class="tabla vt">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Vendedora</th>
+                            <th>Sucursal</th>
+                            <th>Componentes</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-ventas">
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!--
@@ -81,19 +87,19 @@
                 </div>
                 <form>
                     <label>Vendedora</label>
-                    <select id="select-vendedora">
+                    <select id="select-vendedora-nueva">
                     </select>
                     <label>Componentes</label>
-                    <select multiple class="opcion-multiple" id="select-componente">
+                    <select multiple class="opcion-multiple" id="select-componente-nueva">
                     </select>
                     <p>Mantenga presionada la tecla Ctrl para seleccionar varios componentes</p>
                     <label>Sucursal</label>
-                    <select id="select-sucursal">
+                    <select id="select-sucursal-nueva">
                     </select>
                     <label>Fecha</label>
-                    <input type="date" id="select-fecha">
+                    <input type="date" id="select-fecha-nueva">
                     <div class="footer">
-                        <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
+                        <input id="btn-cancelar-nueva" class="cancelar" type="submit" value="Cancelar">
                         <input id="btn-guardar-nueva" class="guardar" type="submit" value="Guardar">
                     </div>                    
                 </form>
@@ -109,18 +115,18 @@
                 </div>
                 <form>
                     <label>Vendedora</label>
-                    <select>
+                    <select id="select-vendedora-editar">
                     </select>
                     <label>Componentes</label>
-                    <select multiple class="opcion-multiple">
+                    <select multiple class="opcion-multiple" id="select-componente-editar">
                     </select>
                     <label>Sucursal</label>
-                    <select>
+                    <select id="select-sucursal-editar">
                     </select>
                     <label>Fecha</label>
-                    <input type="date">
+                    <input type="date" id="select-fecha-editar">
                     <div class="footer">
-                        <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
+                        <input id="btn-cancelar-cambio" class="cancelar" type="submit" value="Cancelar">
                         <input id="btn-guardar-cambio" class="guardar" type="submit" value="Guardar">
                     </div>
                 </form>
@@ -137,13 +143,14 @@
                 <h2>¿Estás segura?</h2>
                 <p>Esta acción no se puede revertir.</p>
                 <div class="footer">
-                    <input id="btn-cancelar" class="cancelar" type="submit" value="Cancelar">
+                    <input id="btn-cancelar-eliminar" class="cancelar" type="submit" value="Cancelar">
                     <input id="btn-eliminar" class="eliminar" type="submit" value="Eliminar">
                 </div>
             </div>
         </div>
 
         <script src="js/ventas.js"></script>
+        <script src="js/funciones.js"></script>
         <script src="js/script.js"></script>
         
     </body>

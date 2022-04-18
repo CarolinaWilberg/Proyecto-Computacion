@@ -6,15 +6,22 @@
 
 body{
     background-color: gainsboro;
-    padding: 50px;
+    padding: 3.125em;
     display: flex;
     flex-wrap: wrap;
 }
 
 .bloque{
     background-color: white;
-    padding-bottom: 5px;
-    border-radius: 5px;
+    padding-bottom: 0.313em;
+    border-radius: 0.313em;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 85.438em;
 }
 
 .ventas-sucursal{
@@ -28,21 +35,22 @@ body{
 
 .reportes p{
     display: inline-block;
-    font-size: 14px;
+    font-size: 0.875em;
     font-family: Arial, Helvetica, sans-serif;
     color: #0b525b;
-    margin: 0px 20px 20px 30px;
+    margin: 0em 1.25em 1.25em 2.5em;
 }
 
 .reportes span{
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: #0b525b;
-    margin: 0px 20px 20px 10px;
+    margin: 0em 1.25em 1.25em 0.625em;
 }
 
 .ventas{
+    max-width: 85.438em;
     width: 100%;
     margin-top: 2%;
 }
@@ -50,24 +58,24 @@ body{
 .encabezado{
     display: flex;
     justify-content: space-between;
-    border-radius: 5px 5px 0px 0px;
-    padding: 20px 30px 20px 30px;
-    margin-bottom: 10px;
+    border-radius: 0.313em 0.313em 0em 0em;
+    padding: 1.25em 1.875em 1.25em 1.875em;
+    margin-bottom: 0.625em;
     background-color: #0b525b;
 }
 
 .reportes .encabezado{
-    margin-bottom: 45px;
+    margin-bottom: 2.813em;
 }
 
 #btn-nueva-venta{
     background-color: #6bb359;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.313em;
     font-weight: bold;
     color: white;
-    font-size: 13px;
-    padding: 7px;
+    font-size: 0.813em;
+    padding: 0.438em;
     cursor: pointer;
 }
 
@@ -76,77 +84,83 @@ body{
 }
 
 #btn-nueva-venta>i{
-    padding-right: 7px;
-    font-size: 13px;
+    padding-right: 0.438em;
+    font-size: 0.813em;
 }
 
 .ventas-sucursal h1, .reportes h1, .ventas h1, .modal h1{
-    font-size: 20px;
+    font-size: 1.25em;
     font-family: Arial, Helvetica, sans-serif;  
     color: white;
 }
 
 .bloque .tabla{
-    margin: 20px 30px;
+    margin: 1.25em 2em;
+}
+
+.scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .tabla thead>tr>th{
     border-collapse: collapse;
-    border-bottom: 1px solid gainsboro;
-    padding-bottom: 5px;
+    border-bottom: 0.063em solid gainsboro;
+    padding-bottom: 0.313em;
     text-align: left;
-    font-size: 14px;
+    font-size: 0.875em;
     font-family: Arial, Helvetica, sans-serif;
     color: #0b525b;
 }
 
 .tabla tbody>tr>td{
     border-collapse: collapse;
-    border-bottom: 1px solid gainsboro;
-    padding-bottom: 5px;
-    padding-top: 10px;
+    border-bottom: 0.063em solid gainsboro;
+    padding-bottom: 0.313em;
+    padding-top: 0.625em;
     text-align: left;
-    font-size: 14px;
+    font-size: 0.875em;
     font-family: Arial, Helvetica, sans-serif;
     color: #0b525b;
 }
 
 .vps>thead>tr>th:first-child{
-    padding-right: 200px;
+    padding-right: 14em;
 }
 
 .vps>thead>tr>th:nth-child(2){
-    padding-right: 200px;
+    padding-right: 14em;
 }
 
 .vt>thead>tr>th:first-child{
-    padding-right: 90px;
+    padding-right: 6em;
 }
 
 .vt>thead>tr>th:nth-child(2){
-    padding-right: 90px;
+    padding-right: 6em;
 }
 
 .vt>thead>tr>th:nth-child(3){
-    padding-right: 100px;
+    padding-right: 6.5em;
 }
 
 .vt>thead>tr>th:nth-child(4){
-    padding-right: 330px;
+    padding-right: 25em;
 }
 
 .vt>thead>tr>th:nth-child(5){
-    padding-right: 110px;
+    padding-right: 7em;
 }
 
 .vt>thead>tr>th:last-child{
-    padding-right: 70px;
+    padding-right: 4.5em;
 }
 
 .icono{
-    margin-left: 5px;
-    margin-right: 20px;
-    font-size: 17px;
+    margin-left: 0.313em;
+    margin-right: 1.25em;
+    font-size: 1.063em;
     cursor: pointer;
 }
 
@@ -175,7 +189,7 @@ MODALES
 
 .modal{
     background-color: white;
-    border-radius: 5px;
+    border-radius: 0.313em;
     margin: 3% auto;
     width: 25%;
 }
@@ -187,48 +201,48 @@ MODALES
 }
 
 .modal form>label {
-    margin: 0px 20px 10px 20px;
+    margin: 0em 1.25em 0.625em 1.25em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     color: #0b525b;
     font-weight: bold;
 }
 
 .modal>h2{
-    margin: 25px 20px 35px 20px;
+    margin: 1.563em 1.25em 2.188em 1.25em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     color: #0b525b;
     font-weight: bold;
 }
 
 .modal p{
-    margin: -15px 20px 20px 20px;
+    margin: -0.938em 1.25em 1.25em 1.25em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 0.75em;
 }
 
 .modal form>select, .modal form>input[type="date"]{
-    margin: 0px 20px 20px 20px;
-    height: 30px;
+    margin: 0em 1.25em 1.25em 1.25em;
+    height: 1.875em;
 }
 
 .modal form>.opcion-multiple{
-    height: 60px;
+    height: 3.75em;
 }
 
 .modal .footer{
     background-color: lightgrey;
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 1.25em;
+    padding: 1.25em;
     text-align: right;
 }
 
 .modal .footer input[type="submit"]{
-    padding: 6px;
-    margin-left: 10px;
+    padding: 0.375em;
+    margin-left: 0.625em;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.313em;
     cursor: pointer;
 }
 
@@ -259,4 +273,20 @@ MODALES
 
 .modal .footer input[type="submit"][class="eliminar"]:hover{
     background-color: rgb(243, 4, 4);
+}
+
+@media(max-width: 850px){
+    .container{
+        flex-direction: column;
+        align-items:center;
+    }
+    .ventas-sucursal{
+        width: 80%;
+        margin-bottom: 1.25em;
+        margin-right: 0%;
+    }
+    .reportes{
+        width: 80%;
+        margin-bottom: 1em;
+    }
 }
